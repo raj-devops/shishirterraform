@@ -2,7 +2,7 @@ resource "aws_secirity_group" "terraform-cloud-shishir-group" {
 
   name        = terraform-cloud-shishir-group
   description = "sg group for EC2 instance"
-  vpc_id      = data.terraform_remote_state.vpc.output.vpc_id
+  vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
   ingress {
 
@@ -10,7 +10,7 @@ resource "aws_secirity_group" "terraform-cloud-shishir-group" {
     from_port   = 22
     to_port     = 22
     protocol    = tcp
-    cidr_block  = ["0.0.0.0/0"]
+    cidr_blocks  = ["0.0.0.0/0"]
 
   }
 
@@ -20,7 +20,7 @@ resource "aws_secirity_group" "terraform-cloud-shishir-group" {
     from_port   = 80
     to_port     = 80
     protocol    = tcp
-    cidr_block  = ["0.0.0.0/0"]
+    cidr_blocks  = ["0.0.0.0/0"]
 
   }
 
@@ -30,7 +30,7 @@ resource "aws_secirity_group" "terraform-cloud-shishir-group" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_block  = ["0.0.0.0/0"]
+    cidr_blocks  = ["0.0.0.0/0"]
 
   }
 
