@@ -16,7 +16,7 @@ resource "aws_instance" "shishir-Amazon-Linux-instance" {
   key_name               = "terraformkey"
   user_data              = file("apache.sh")
   subnet_id              = data.terraform_remote_state.vpc.outputs.public_subnets[0]
-  vpc_security_group_ids = [aws_secirity_group.terraform-cloud-shishir-group.id, ]
+  vpc_security_group_ids = [aws_security_group.terraform-cloud-shishir-group.id, ]
   tags = {
     Name = "shishir machine no ${count.index + 1}"
   }
