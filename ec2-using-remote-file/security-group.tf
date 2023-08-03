@@ -1,6 +1,6 @@
 resource "aws_security_group" "terraform-cloud-shishir-group" {
 
-  name        = terraform-cloud-shishir-group
+  name        = "terraform-cloud-shishir-group"
   description = "sg group for EC2 instance"
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
